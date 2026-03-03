@@ -1,73 +1,72 @@
-# Welcome to your Lovable project
+# Michael Portfolio
 
-## Project info
+![Aperçu du portfolio](public/placeholder.svg)
 
-**URL**: https://lovable.dev/projects/7410f81b-8218-4f2d-bb32-1ba1f84eabb2
+Portfolio personnel et blog orienté impact durable, avec une partie vitrine (réalisations) et une partie éditoriale (posts Supabase).
 
-## How can I edit this code?
+## Objectif du projet
 
-There are several ways of editing your application.
+Ce projet présente :
+- les réalisations et piliers de travail de Michael,
+- un blog dynamique connecté à Supabase,
+- un espace admin pour publier et supprimer des articles.
 
-**Use Lovable**
+## Stack technique
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7410f81b-8218-4f2d-bb32-1ba1f84eabb2) and start prompting.
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- Supabase (Auth, PostgreSQL, Storage)
+- Framer Motion
 
-Changes made via Lovable will be committed automatically to this repo.
+## Fonctionnalités clés
 
-**Use your preferred IDE**
+- Section "Réalisations" avec contenu détaillé (intro, sections, conclusion, tags)
+- Blog dynamique avec pagination
+- Page article via slug (`/article/:slug`)
+- Publication d'article avec upload d'image dans le bucket `ARTICLE`
+- Génération automatique de `slug` et `excerpt`
+- Suppression d'article avec logs de diagnostic
+- Internationalisation via context (FR/EN)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Structure (résumé)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- `src/pages` : routes
+- `src/features/blog` : logique blog
+- `src/features/projects` : réalisations statiques
+- `src/context` : language provider/hooks
+- `src/lib/supabase.ts` : client et services Supabase
+- `src/types/supabase.ts` : types DB
 
-Follow these steps:
+## Installation locale
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Build production
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run build
+npm run preview
+```
 
-**Use GitHub Codespaces**
+## Variables d'environnement
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Crée un fichier `.env` avec :
 
-## What technologies are used for this project?
+```env
+VITE_SUPABASE_URL=...
+VITE_SUPABASE_PUBLISHABLE_KEY=...
+```
 
-This project is built with:
+## Notes Supabase
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Table principale blog : `public.posts`
+- Bucket images : `ARTICLE` (sensible à la casse)
+- RLS activé
 
-## How can I deploy this project?
+## Auteur
 
-Simply open [Lovable](https://lovable.dev/projects/7410f81b-8218-4f2d-bb32-1ba1f84eabb2) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Criss Kasisa (crisskasisa1@gmail.com)
