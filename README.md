@@ -1,6 +1,6 @@
 # Michael Portfolio
 
-![Aperçu du portfolio](public/placeholder.svg)
+![Aperçu du portfolio](public/preview.svg)
 
 Portfolio personnel et blog orienté impact durable, avec une partie vitrine (réalisations) et une partie éditoriale (posts Supabase).
 
